@@ -12,7 +12,7 @@ cache: false
 
 # Custom interface configuration
 interface:
-  customWelcome: "Oii {{user.name}}"
+  customWelcome: "Oi {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://xablau.com/privacy'
@@ -270,11 +270,11 @@ endpoints:
         default: ['llama-3.2']
         fetch: true
       titleConvo: true
-      titleModel: 'current_model'
+      titleModel: "current_model"
       summarize: false
-      summaryModel: 'current_model'
+      summaryModel: "current_model"
       forcePrompt: false
-      modelDisplayLabel: 'Test'
+      modelDisplayLabel: "Gateway"
       iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
 
 fileConfig:
