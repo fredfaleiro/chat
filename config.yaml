@@ -306,39 +306,31 @@ fileConfig:
       - "application/x-sh"
       - "text/x-tex"
       - "application/typescript"
-      - "text/plain"   
-    openAI:
-     fileLimit: 5
-     fileSizeLimit: 10  # Maximum size for an individual file in MB
-     totalSizeLimit: 20  # Maximum total size for all files in a single request in MB
-     supportedMimeTypes:
-       - "image/.*"
-       - "text/csv"      
-       - "application/xml"
-       - "text/x-c"
-       - "text/x-c\\+\\+"
-       - "text/x-csharp"
-       - "text/css"
-       - "application/msword"
-       - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-       - "text/x-golang"
-       - "text/html"
-       - "text/x-java"
-       - "text/javascript"
-       - "application/json"
-       - "text/markdown"
-       - "application/pdf"
-       - "text/x-php"
-       - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-       - "text/x-python"
-       - "text/x-script.python"
-       - "text/x-ruby"
-       - "application/x-sh"
-       - "text/x-tex"
-       - "application/typescript"
-       - "text/plain" 
-     disabled: false
+      - "text/plain"     
     default:
-      totalSizeLimit: 20    
+      totalSizeLimit: 20 
+      supportedMimeTypes:    
+      - "text/x-c"
+      - "text/x-c\\+\\+"
+      - "text/x-csharp"
+      - "text/css"
+      - "application/msword"
+      - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      - "text/x-golang"
+      - "text/html"
+      - "text/x-java"
+      - "text/javascript"
+      - "application/json"
+      - "text/markdown"
+      - "application/pdf"
+      - "text/x-php"
+      - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      - "text/x-python"
+      - "text/x-script.python"
+      - "text/x-ruby"
+      - "application/x-sh"
+      - "text/x-tex"
+      - "application/typescript"
+      - "text/plain"        
   serverFileSizeLimit: 50  # Global server file size limit in MB
   avatarSizeLimit: 2  # Limit for user avatar image size in MB
