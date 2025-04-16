@@ -12,7 +12,7 @@ cache: false
 
 # Custom interface configuration
 interface:
-  customWelcome: "Oi {{user.name}}"
+  customWelcome: "Oii {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://xablau.com/privacy'
@@ -281,36 +281,36 @@ endpoints:
 fileConfig:
   endpoints:    
     default:
-      fileLimit: 2
-      fileSizeLimit: 1  # Maximum size for an individual file in MB
-      totalSizeLimit: 1 
+      fileLimit: 4
+      fileSizeLimit: 10  
+      totalSizeLimit: 50 
       supportedMimeTypes:    
       - "text/x-c"
-      - "text/x-c\\+\\+"
-      - "application/csv"
-      - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      - "text/x-c\\+\\+"      
       - "text/html"
-      - "text/x-java"
-      - "application/json"
+      - "text/x-java"      
       - "text/markdown"
       - "application/pdf"
-      - "text/x-php"
-      - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      - "text/x-php"      
+      - "text/javascript"
       - "text/x-python"
       - "text/x-script.python"
       - "text/x-ruby"
       - "text/x-tex"
       - "text/plain"
-      - "text/css"
+      - "text/css"      
       - "text/vtt"
-      - "image/jpeg"
-      - "text/javascript"
+      - "image/jpeg"      
       - "image/gif"
       - "image/png"
-      - "application/typescript"
-      - "application/xml"
       - "image/svg"
       - "image/svg+xml"
+      - "application/csv"
+      - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      - "application/json"
+      - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      - "application/typescript"
+      - "application/xml"      
       - "application/vnd.ms-excel"
       - "application/msexcel"
       - "application/x-msexcel"
@@ -320,5 +320,10 @@ fileConfig:
       - "application/xls"
       - "application/x-xls"
       - "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-  serverFileSizeLimit: 2  # Global server file size limit in MB
+      - "text/csv"
+      - "text/comma-separated-values"
+      - "text/x-comma-separated-values"
+      - "text/tab-separated-values"
+      - "text/x-csv"
+  serverFileSizeLimit: 100  # Global server file size limit in MB
   avatarSizeLimit: 2  # Limit for user avatar image size in MB
