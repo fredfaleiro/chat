@@ -108,6 +108,22 @@ rateLimits:
 
 endpoints: 
   custom:
+    - name: "Portkey"
+      apiKey: "dummy"
+      baseURL: ${PORTKEY_GATEWAY_URL}
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "PORTKEY_OPENAI_VIRTUAL_KEY"
+      models:
+        default: ["gpt-4o-mini"]
+        fetch: true
+      titleConvo: true
+      titleModel: "current_model"
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false
+      modelDisplayLabel: "Portkey:OpenAI"
+      
     - name: 'IA'      
       apiKey: '${OPENROUTER_KEY}'
       baseURL: 'https://openrouter.ai/api/v1'
