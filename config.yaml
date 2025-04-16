@@ -258,8 +258,7 @@ endpoints:
         fetch: false
       titleConvo: true
       titleModel: 'meta-llama/llama-3-70b-instruct'
-      dropParams: ['stop']
-      modelDisplayLabel: 'current_model'  
+      dropParams: ['stop']      
 
     - name: 'AIs'
       apikey: 'dummy'
