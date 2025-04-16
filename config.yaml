@@ -1,18 +1,9 @@
-# For more information, see the Configuration Guide:
-# https://www.librechat.ai/docs/configuration/librechat_yaml
-
-# Configuration version (required)
 version: 1.2.4
 
-# Cache settings: Set to true to enable caching
 cache: false
 
-# File strategy s3/firebase
-# fileStrategy: "s3"
-
-# Custom interface configuration
 interface:
-  customWelcome: "Oi {{user.name}}"
+  customWelcome: "Oii {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://xablau.com/privacy'
@@ -72,13 +63,6 @@ interface:
   agents: false
   runCode: false
 
-# Example Registration Object Structure (optional)
-#registration:
-  #socialLogins: ['github', 'google', 'discord', 'openid', 'facebook', 'apple']
-  # allowedDomains:
-  # - "gmail.com"
-
-
 balance:
   enabled: true
   startBalance: 20000
@@ -99,7 +83,6 @@ speech:
     openai:      
       apiKey: '${STT_API_KEY}'
       model: 'whisper-1'
-
 
 rateLimits:
   fileUploads:
@@ -123,65 +106,7 @@ rateLimits:
     userMax: 50
     userWindowInMinutes: 1
 
-# Example Actions Object Structure
-# actions:
-#   allowedDomains:
-#     - "swapi.dev"
-#     - "librechat.ai"
-#     - "google.com"
-
-# Example MCP Servers Object Structure
-# mcpServers:
-#   everything:
-#     # type: sse # type can optionally be omitted
-#     url: http://localhost:3001/sse
-#     timeout: 60000  # 1 minute timeout for this server, this is the default timeout for MCP servers.
-#   puppeteer:
-#     type: stdio
-#     command: npx
-#     args:
-#       - -y
-#       - "@modelcontextprotocol/server-puppeteer"
-#     timeout: 300000  # 5 minutes timeout for this server
-#   filesystem:
-#     # type: stdio
-#     command: npx
-#     args:
-#       - -y
-#       - "@modelcontextprotocol/server-filesystem"
-#       - /home/user/LibreChat/
-#     iconPath: /home/user/LibreChat/client/public/assets/logo.svg
-#   mcp-obsidian:
-#     command: npx
-#     args:
-#       - -y
-#       - "mcp-obsidian"
-#       - /path/to/obsidian/vault
-
-# Definition of custom endpoints
-endpoints:
-  # assistants:
-  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
-  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
-  #   timeoutMs: 180000  # Timeout for assistant operations
-  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
-  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
-  #   # excludedIds: ["asst_excludedAssistantId"]
-  #   # Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
-  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
-  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
-  #   retrievalModels: ["gpt-4-turbo-preview"]
-  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-  # agents:
-  #   # (optional) Default recursion depth for agents, defaults to 25
-  #   recursionLimit: 50
-  #   # (optional) Max recursion depth for agents, defaults to 25
-  #   maxRecursionLimit: 100
-  #   # (optional) Disable the builder interface for agents
-  #   disableBuilder: false
-  #   # (optional) Agent Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #   capabilities: ["execute_code", "file_search", "actions", "tools"]
+endpoints: 
   custom:
     - name: 'IA'      
       apiKey: '${OPENROUTER_KEY}'
@@ -260,22 +185,57 @@ endpoints:
       titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']      
 
-    - name: 'AIs'
+    - name: 'Gateway'
       apikey: 'dummy'
       baseURL: ${PORTKEY_GATEWAY_URL}
       headers:
         x-portkey-api-key: '${PORTKEY_API_KEY}'
         x-portkey-config: 'pc-chatai-7fe96e'
       models:
-        default: ['llama-3.2']
+        default: ['allenai/molmo-7b-d:free']
         fetch: true
       titleConvo: true
       titleModel: "current_model"
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false
-      modelDisplayLabel: "Gateway"
+      modelDisplayLabel: "current_model"
       iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
+
+
+    - name: 'Gateway 2'
+      apikey: 'dummy'
+      baseURL: ${PORTKEY_GATEWAY_URL}
+      headers:
+        x-portkey-api-key: '${PORTKEY_API_KEY}'
+        x-portkey-config: 'pc-chatai-7fe96e'
+      models:
+        default: ['allenai/molmo-7b-d:free']
+        fetch: false
+      titleConvo: true
+      titleModel: "current_model"
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false
+      modelDisplayLabel: "current_model"
+      iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
+
+    - name: 'Gateway 3'
+      apikey: '${PORTKEY_API_KEY}'
+      baseURL: ${PORTKEY_GATEWAY_URL}
+      headers:
+        x-portkey-api-key: '${PORTKEY_API_KEY}'
+        x-portkey-config: 'pc-chatai-7fe96e'
+      models:
+        default: ['allenai/molmo-7b-d:free']
+        fetch: false
+      titleConvo: true
+      titleModel: "current_model"
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false
+      modelDisplayLabel: "current_model"      
+
 
 fileConfig:
   endpoints:    
