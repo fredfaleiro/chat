@@ -110,7 +110,7 @@ endpoints:
   custom:
     - name: "AI"
       apiKey: "dummy"
-      baseURL: ${PORTKEY_GATEWAY_URL}
+      baseURL: "https://openrouter.ai/api/v1"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
@@ -126,7 +126,7 @@ endpoints:
       
     - name: 'Free models'
       apikey: 'dummy'
-      baseURL: ${PORTKEY_GATEWAY_URL}
+      baseURL: "https://openrouter.ai/api/v1"
       headers:
         x-portkey-api-key: '${PORTKEY_API_KEY}'
         x-portkey-virtual-key: "openrouter-d3ccde"
