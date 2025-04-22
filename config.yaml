@@ -3,7 +3,7 @@ version: 1.2.4
 cache: false
 
 interface:
-  customWelcome: "Olá {{user.name}}"
+  customWelcome: "oi {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://xablau.com/privacy'
@@ -123,14 +123,14 @@ endpoints:
       forcePrompt: false      
       titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']                 
-    
-    - name: "AI3"
+
+    - name: "AI2"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
-        x-portkey-metadata: ['_user': 'user_id_123', 'foo': 'bar']
+        x-portkey-metadata: ['foo': {{user.name}}]
       models:
         default: ["gpt-4o-mini"]        
         fetch: true
@@ -142,8 +142,7 @@ endpoints:
       dropParams: ['stop']           
       userIdQuery: true
 
-
-    - name: "AI4"
+    - name: "AI3"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
