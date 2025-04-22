@@ -123,39 +123,14 @@ endpoints:
       forcePrompt: false      
       titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']                 
-
-
-    - name: "AI2"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
-      headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
-        x-portkey-provider: "openrouter"
-      models:
-        default: 
-        - deepseek/deepseek-r1-distill-llama-70b:free
-        - deepseek/deepseek-r1-distill-qwen-14b:free
-        - deepseek/deepseek-r1-distill-qwen-32b:free
-        - deepseek/deepseek-r1-zero:free
-        - deepseek/deepseek-r1:free
-        - deepseek/deepseek-v3-base:free
-        fetch: true
-      titleConvo: true      
-      summarize: false
-      summaryModel: "current_model"
-      forcePrompt: false      
-      titleModel: 'meta-llama/llama-3-70b-instruct'
-      dropParams: ['stop']           
-      userIdQuery: true
-
+    
     - name: "AI3"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
-        x-portkey-metadata: {'_user': 'user_id_123', 'foo': 'bar'}
+        x-portkey-metadata: ['_user': 'user_id_123', 'foo': 'bar']
       models:
         default: ["gpt-4o-mini"]        
         fetch: true
@@ -174,7 +149,7 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
-        x-portkey-metadata: {'_user': {{user.id}}, 'foo': {{user.name}}}
+        x-portkey-metadata: ['foo': {{user.name}}]
       models:
         default: ["gpt-4o-mini"]        
         fetch: true
