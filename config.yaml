@@ -3,7 +3,7 @@ version: 1.2.4
 cache: false
 
 interface:
-  customWelcome: "Olá {{user.name}}"
+  customWelcome: "Oi {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://xablau.com/privacy'
@@ -115,7 +115,7 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
       models:
-        default: ["gpt-4o-mini", "scb10x/llama3.1-typhoon2-8b-instruct"]
+        default: ["gpt-4o-mini", "scb10x/llama3.1-typhoon2-8b-instruct", "cohere/command-r"]
         fetch: true
       titleConvo: true      
       summarize: false
