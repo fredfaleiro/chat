@@ -141,7 +141,6 @@ endpoints:
       titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']           
       
-
     - name: "AI3"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
@@ -159,7 +158,7 @@ endpoints:
       titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']           
 
-      - name: "AI3"
+      - name: "AI4"
         apiKey: "dummy"
         baseURL: "${PORTKEY_GATEWAY_URL}"
         headers:
@@ -177,7 +176,7 @@ endpoints:
         dropParams: ['stop']           
         userIdQuery: true      
 
-    - name: "AI4"
+    - name: "AI5"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
@@ -194,7 +193,7 @@ endpoints:
       titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']        
 
-      name: "AI5"
+      name: "AI6"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
