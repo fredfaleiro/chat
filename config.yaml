@@ -3,7 +3,7 @@ version: 1.2.4
 cache: false
 
 interface:
-  customWelcome: "Oi {{user.name}}"
+  customWelcome: "Olá {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://xablau.com/privacy'
@@ -108,22 +108,31 @@ rateLimits:
 
 endpoints: 
   custom:
-    - name: 'IA'      
-      apiKey: '${OPENROUTER_KEY}'
-      baseURL: 'https://openrouter.ai/api/v1'
+    - name: "AI"
+      apiKey: "dummy"
+      baseURL: ${PORTKEY_GATEWAY_URL}
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
       models:
-        default: ['meta-llama/llama-3-70b-instruct']
+        default: ["gpt-4o-mini"]
         fetch: true
       titleConvo: true
-      titleModel: 'meta-llama/llama-3-70b-instruct'
-      dropParams: ['stop']
-      modelDisplayLabel: 'IA'        
-    
-    - name: 'Free models'      
-      apiKey: '${OPENROUTER_KEY}'
-      baseURL: 'https://openrouter.ai/api/v1'
+      titleModel: "current_model"
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false
+      modelDisplayLabel: "AI"
+      
+    - name: 'Free models'
+      apikey: 'dummy'
+      baseURL: ${PORTKEY_GATEWAY_URL}
+      headers:
+        x-portkey-api-key: '${PORTKEY_API_KEY}'
+        x-portkey-virtual-key: "openrouter-d3ccde"
       models:
         default: 
+        - openrouter/auto
         - allenai/molmo-7b-d:free
         - bytedance-research/ui-tars-72b:free
         - cognitivecomputations/dolphin3.0-mistral-24b:free
@@ -178,64 +187,14 @@ endpoints:
         - qwen/qwq-32b-preview:free
         - qwen/qwq-32b:free
         - rekaai/reka-flash-3:free
-        - sophosympatheia/rogue-rose-103b-v0.2:free
-        - openrouter/auto
+        - sophosympatheia/rogue-rose-103b-v0.2:free        
         fetch: false
-      titleConvo: true
-      titleModel: 'meta-llama/llama-3-70b-instruct'
-      dropParams: ['stop']      
-
-    - name: 'Gateway'
-      apikey: 'dummy'
-      baseURL: ${PORTKEY_GATEWAY_URL}
-      headers:
-        x-portkey-api-key: '${PORTKEY_API_KEY}'
-        x-portkey-config: 'pc-chatai-7fe96e'
-      models:
-        default: ['allenai/molmo-7b-d:free']
-        fetch: true
       titleConvo: true
       titleModel: "current_model"
       summarize: false
       summaryModel: "current_model"
-      forcePrompt: false
-      modelDisplayLabel: "current_model"
+      forcePrompt: false      
       iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
-
-
-    - name: 'Gateway 2'
-      apikey: 'dummy'
-      baseURL: ${PORTKEY_GATEWAY_URL}
-      headers:
-        x-portkey-api-key: '${PORTKEY_API_KEY}'
-        x-portkey-config: 'pc-chatai-7fe96e'
-      models:
-        default: ['allenai/molmo-7b-d:free']
-        fetch: false
-      titleConvo: true
-      titleModel: "current_model"
-      summarize: false
-      summaryModel: "current_model"
-      forcePrompt: false
-      modelDisplayLabel: "current_model"
-      iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
-
-    - name: 'Gateway 3'
-      apikey: '${PORTKEY_API_KEY}'
-      baseURL: ${PORTKEY_GATEWAY_URL}
-      headers:
-        x-portkey-api-key: '${PORTKEY_API_KEY}'
-        x-portkey-config: 'pc-chatai-7fe96e'
-      models:
-        default: ['allenai/molmo-7b-d:free']
-        fetch: false
-      titleConvo: true
-      titleModel: "current_model"
-      summarize: false
-      summaryModel: "current_model"
-      forcePrompt: false
-      modelDisplayLabel: "current_model"      
-
 
 fileConfig:
   endpoints:    
