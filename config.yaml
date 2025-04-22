@@ -3,7 +3,7 @@ version: 1.2.4
 cache: false
 
 interface:
-  customWelcome: "Oi {{user.name}}"
+  customWelcome: "Olá {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://xablau.com/privacy'
@@ -114,14 +114,9 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-debug: "false"
       models:
-        default: 
-        - "gpt-4o-mini"
-        - "cohere/command-r"
-        - "cohere/command-r-03-2024"
-        - "mistralai/mistral-small"
-        - "nousresearch/nous-hermes-llama2-13b"
-        
+        default: ["gpt-4o-mini"]
         fetch: true
       titleConvo: true      
       summarize: false
@@ -137,6 +132,7 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
         x-portkey-metadata: '{"_user": "foo"}'
+        x-portkey-debug: "false"
       models:
         default: ["gpt-4o-mini"]
         fetch: true
@@ -146,8 +142,7 @@ endpoints:
       forcePrompt: false      
       titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']      
-      userIdQuery: true              
-         
+      userIdQuery: true                    
 
 fileConfig:
   endpoints:    
