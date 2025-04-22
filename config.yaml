@@ -107,24 +107,8 @@ rateLimits:
     userWindowInMinutes: 1
 
 endpoints: 
-  custom:
-    - name: "AI"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
-      headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
-      models:
-        default: ["gpt-4o-mini"]
-        fetch: true
-      titleConvo: true
-      titleModel: "current_model"
-      summarize: false
-      summaryModel: "current_model"
-      forcePrompt: false
-      modelDisplayLabel: "AI"
-
-    - name: "AIs"
+  custom:    
+    - name: "AI1"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
@@ -138,7 +122,54 @@ endpoints:
       summaryModel: "current_model"
       forcePrompt: false      
       titleModel: 'meta-llama/llama-3-70b-instruct'
+      dropParams: ['stop']                 
+
+
+    - name: "AI2"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+      models:
+        default: 
+        - deepseek/deepseek-r1-distill-llama-70b:free
+        - deepseek/deepseek-r1-distill-qwen-14b:free
+        - deepseek/deepseek-r1-distill-qwen-32b:free
+        - deepseek/deepseek-r1-zero:free
+        - deepseek/deepseek-r1:free
+        - deepseek/deepseek-v3-base:free
+        fetch: true
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'meta-llama/llama-3-70b-instruct'
       dropParams: ['stop']           
+      userIdQuery: true
+
+    - name: "AI3"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+      models:
+        default: 
+        - deepseek/deepseek-r1-distill-llama-70b:free
+        - deepseek/deepseek-r1-distill-qwen-14b:free
+        - deepseek/deepseek-r1-distill-qwen-32b:free
+        - deepseek/deepseek-r1-zero:free
+        - deepseek/deepseek-r1:free
+        - deepseek/deepseek-v3-base:free
+        fetch: true
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'meta-llama/llama-3-70b-instruct'
+      dropParams: ['stop']           
+      userIdQuery: true
 
 
 fileConfig:
