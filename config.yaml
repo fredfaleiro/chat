@@ -108,7 +108,7 @@ rateLimits:
 
 endpoints: 
   custom:    
-    - name: "openAI"
+    - name: "ChatGPT"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
@@ -130,6 +130,7 @@ endpoints:
       forcePrompt: false      
       titleModel: 'google/gemini-2.0-flash-001'
       dropParams: ['stop']    
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
 
     - name: "Deepseek"
       apiKey: "dummy"
@@ -150,7 +151,7 @@ endpoints:
       titleModel: 'google/gemini-2.0-flash-001'
       dropParams: ['stop'] 
 
-    - name: "google"
+    - name: "Gemini"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
@@ -170,8 +171,10 @@ endpoints:
       forcePrompt: false      
       titleModel: 'google/gemini-2.0-flash-001'
       dropParams: ['stop'] 
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/gemini.svg
 
-    - name: "anthropic"
+
+    - name: "Anthropic"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
@@ -191,6 +194,7 @@ endpoints:
       forcePrompt: false      
       titleModel: 'google/gemini-2.0-flash-001'
       dropParams: ['stop'] 
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/anthropic.svg
 
     - name: "Muito mais IA's"
       apiKey: "dummy"
