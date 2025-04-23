@@ -64,9 +64,9 @@ interface:
   runCode: false
 
 balance:
-  enabled: true
+  enabled: false
   startBalance: 20000
-  autoRefillEnabled: true
+  autoRefillEnabled: false
   refillIntervalValue: 10
   refillIntervalUnit: 'minutes'
   refillAmount: 50000
