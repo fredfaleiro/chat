@@ -131,17 +131,17 @@ endpoints:
       titleModel: 'google/gemini-2.0-flash-001'
       dropParams: ['stop']    
 
-      - name: "Deepseek"
-        apiKey: "dummy"
-        baseURL: "${PORTKEY_GATEWAY_URL}"
-        headers:
-          x-portkey-api-key: "${PORTKEY_API_KEY}"
-          x-portkey-virtual-key: "openrouter-d3ccde"
-          x-portkey-debug: "false"
+    - name: "Deepseek"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-debug: "false"
         models:
           default: 
-            - "deepseek/deepseek-chat"
-            - "deepseek/deepseek-r1"
+           - "deepseek/deepseek-chat"
+           - "deepseek/deepseek-r1"
           fetch: false
         titleConvo: true      
         summarize: false
@@ -150,20 +150,20 @@ endpoints:
         titleModel: 'google/gemini-2.0-flash-001'
         dropParams: ['stop'] 
 
-      - name: "Gemini"
-        apiKey: "dummy"
-        baseURL: "${PORTKEY_GATEWAY_URL}"
-        headers:
-          x-portkey-api-key: "${PORTKEY_API_KEY}"
-          x-portkey-virtual-key: "openrouter-d3ccde"
-          x-portkey-debug: "false"
+    - name: "Gemini"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-debug: "false"
         models:
-          default: 
-            - "google/gemini-2.5-flash-preview"
-            - "google/gemini-2.5-flash-preview:thinking"
-            - "google/gemini-pro-1.5"
-            - "google/gemma-3-27b-it"
-          fetch: false
+         default: 
+          - "google/gemini-2.5-flash-preview"
+          - "google/gemini-2.5-flash-preview:thinking"
+          - "google/gemini-pro-1.5"
+          - "google/gemma-3-27b-it"
+         fetch: false
         titleConvo: true      
         summarize: false
         summaryModel: "current_model"
@@ -171,26 +171,26 @@ endpoints:
         titleModel: 'google/gemini-2.0-flash-001'
         dropParams: ['stop'] 
 
-      - name: "Anthropic"
-        apiKey: "dummy"
-        baseURL: "${PORTKEY_GATEWAY_URL}"
-        headers:
-          x-portkey-api-key: "${PORTKEY_API_KEY}"
-          x-portkey-virtual-key: "openrouter-d3ccde"
-          x-portkey-debug: "false"
-        models:
-          default: 
-            - "anthropic/claude-3.5-haiku"
-            - "anthropic/claude-3.5-sonnet"	
-            - "anthropic/claude-3.7-sonnet"
-            - "anthropic/claude-3.7-sonnet:thinking"
-          fetch: false
-        titleConvo: true      
-        summarize: false
-        summaryModel: "current_model"
-        forcePrompt: false      
-        titleModel: 'google/gemini-2.0-flash-001'
-        dropParams: ['stop'] 
+    - name: "Anthropic"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-debug: "false"
+      models:
+        default: 
+         - "anthropic/claude-3.5-haiku"
+         - "anthropic/claude-3.5-sonnet"	
+         - "anthropic/claude-3.7-sonnet"
+         - "anthropic/claude-3.7-sonnet:thinking"
+        fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop'] 
 
     - name: "Muito mais IA's"
       apiKey: "dummy"
