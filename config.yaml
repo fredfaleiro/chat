@@ -138,17 +138,17 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
         x-portkey-debug: "false"
-        models:
-          default: 
-           - "deepseek/deepseek-chat"
-           - "deepseek/deepseek-r1"
-          fetch: false
-        titleConvo: true      
-        summarize: false
-        summaryModel: "current_model"
-        forcePrompt: false      
-        titleModel: 'google/gemini-2.0-flash-001'
-        dropParams: ['stop'] 
+      models:
+       default: 
+        - "deepseek/deepseek-chat"
+        - "deepseek/deepseek-r1"
+       fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop'] 
 
     - name: "Gemini"
       apiKey: "dummy"
@@ -157,19 +157,19 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
         x-portkey-debug: "false"
-        models:
-         default: 
-          - "google/gemini-2.5-flash-preview"
-          - "google/gemini-2.5-flash-preview:thinking"
-          - "google/gemini-pro-1.5"
-          - "google/gemma-3-27b-it"
-         fetch: false
-        titleConvo: true      
-        summarize: false
-        summaryModel: "current_model"
-        forcePrompt: false      
-        titleModel: 'google/gemini-2.0-flash-001'
-        dropParams: ['stop'] 
+      models:
+       default: 
+        - "google/gemini-2.5-flash-preview"
+        - "google/gemini-2.5-flash-preview:thinking"
+        - "google/gemini-pro-1.5"
+        - "google/gemma-3-27b-it"
+       fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop'] 
 
     - name: "Anthropic"
       apiKey: "dummy"
