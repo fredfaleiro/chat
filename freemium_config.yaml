@@ -218,3 +218,12 @@ fileConfig:
       - "text/x-csv"
   serverFileSizeLimit: 100  # Global server file size limit in MB
   avatarSizeLimit: 2  # Limit for user avatar image size in MB
+
+  modelSpecs:
+  prioritize: true
+  list:
+    - name: "deepseek/deepseek-chat"
+      label: "IA Chinesa"
+      default: true
+      description: "Talk to xing"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/anthropic.svg"
