@@ -6,50 +6,16 @@ interface:
   customWelcome: "Olá {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
-    externalUrl: 'https://xablau.com/privacy'
+    externalUrl: 'https://sia.chat/privacy'
     openNewTab: true
 
   # Terms of service
   termsOfService:
-    externalUrl: 'https://xablau.com/tos'
+    externalUrl: 'https://sia.chat/tos'
     openNewTab: true
     modalAcceptance: true
     modalTitle: "Termos e Condições"
-    modalContent: |
-       #Termos de Serviço da Plataforma de Chat com IA
-     
-
-        1. Licença de Uso do Código do Painel de Administração
-
-        Ao adquirir um pacote específico que inclua essa funcionalidade, você recebe uma licença limitada para baixar e utilizar o código-fonte fornecido, exclusivamente para acessar um painel de administração relacionado à Plataforma. Embora você tenha o direito de usar este código conforme licenciado, fica expressamente proibida a revenda, redistribuição, sublicenciamento ou qualquer outra forma de transferência deste código para terceiros sem nossa permissão prévia e explícita por escrito. A titularidade e os direitos de propriedade intelectual sobre o código permanecem conosco ou com nossos licenciadores.
-
-        2. Coleta e Uso de Dados Pessoais
-
-        Para fornecer e aprimorar nossos Serviços, processar transações e manter a comunicação com você, coletamos dados pessoais como nome, endereço de e-mail e informações de pagamento. A forma como coletamos, usamos e protegemos seus dados está detalhada em nossa Política de Privacidade, a qual recomendamos a leitura atenta.
-
-        3. Cookies e Tecnologias Semelhantes
-
-        Nossa Plataforma utiliza cookies e outras tecnologias similares para melhorar a sua experiência de usuário, analisar o tráfego e o uso dos Serviços, e habilitar certas funcionalidades. Ao continuar a usar a Plataforma, você concorda com o uso de cookies de acordo com as práticas descritas em nossa Política de Privacidade.
-
-        4. Conduta do Usuário e Uso Aceitável
-
-        Você concorda em utilizar a Plataforma apenas para fins lícitos e de forma a não violar leis, regulamentos ou os direitos de terceiros. É proibido usar os Serviços de maneira que possa restringir ou inibir o uso e aproveitamento da Plataforma por outros usuários. Comportamentos inadequados incluem, mas não se limitam a: assédio, envio de conteúdo ofensivo, obsceno ou ilegal, ou qualquer ação que interrompa ou prejudique o funcionamento normal dos Serviços.
-
-        5. Legislação Aplicável
-
-        Estes Termos serão regidos e interpretados de acordo com as leis da jurisdição aplicável onde nossa entidade está registrada, sem consideração a conflitos de princípios legais que possam direcionar a aplicação da lei de outra jurisdição.
-
-        6. Alterações nos Termos
-
-        Reservamo-nos o direito de modificar estes Termos a qualquer momento, a nosso exclusivo critério. Notificaremos os usuários sobre quaisquer alterações significativas através do endereço de e-mail fornecido ou por meio de um aviso destacado na Plataforma. O uso continuado da Plataforma após a notificação e publicação das alterações constituirá sua aceitação tácita dos Termos revisados.
-
-        7. Contato
-
-        Se você tiver alguma dúvida ou precisar de esclarecimentos sobre estes Termos de Serviço, por favor, entre em contato conosco através dos canais de comunicação oficiais indicados em nossa Plataforma.
-
-        Aceitação dos Termos
-
-        Ao utilizar a Plataforma de Chat com IA, você reconhece que leu, compreendeu e concorda em cumprir estes Termos de Serviço.    
+    modalContent: "Termos e Condições"
 
 
   endpointsMenu: true
@@ -115,6 +81,7 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
         x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
           - "openai/gpt-4o-mini-search-preview"
@@ -139,6 +106,7 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
         x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
        default: 
         - "deepseek/deepseek-chat"
@@ -157,6 +125,7 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
         x-portkey-debug: "false"
       models:
        default: 
@@ -180,6 +149,7 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
         x-portkey-debug: "false"
       models:
         default: 
@@ -203,6 +173,7 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-virtual-key: "openrouter-d3ccde"        
         x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
         - "google/gemini-2.5-flash-preview"
