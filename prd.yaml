@@ -89,6 +89,7 @@ endpoints:
           - "openai/gpt-4o"
           - "openai/o1-mini"	
           - "openai/o3-mini"
+          - "openai/o4-mini"
           - "openai/gpt-4.1-mini"
         fetch: false
       titleConvo: true      
@@ -166,7 +167,7 @@ endpoints:
       dropParams: ['stop'] 
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/anthropic.svg
 
-    - name: "Muito mais IA's"
+    - name: "Mais modelos"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
@@ -176,10 +177,22 @@ endpoints:
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
+        - "microsoft/phi-4-reasoning-plus"
+        - "inception/mercury-coder-small-beta"
+        - "meta-llama/llama-guard-4-12b"
+        - "qwen/qwen3-30b-a3b"
+        - "qwen/qwen3-8b"
+        - "qwen/qwen3-14b"
+        - "qwen/qwen3-32b"
+        - "qwen/qwen3-235b-a22b"
+        - "thudm/glm-z1-rumination-32b"
+        - "thudm/glm-z1-32b"
+        - "thudm/glm-4-32b"
         - "google/gemini-2.5-flash-preview"
         - "qwen/qwen2.5-coder-7b-instruct"
         - "openai/gpt-4.1-nano"
         - "x-ai/grok-3-mini-beta"
+        - "nvidia/llama-3.3-nemotron-super-49b-v1"
         - "meta-llama/llama-4-maverick"
         - "meta-llama/llama-4-scout"
         - "mistral/ministral-8b"
@@ -235,7 +248,6 @@ endpoints:
         - "liquid/lfm-40b"
         - "meta-llama/llama-3.2-3b-instruct"
         - "meta-llama/llama-3.2-1b-instruct"
-        - "meta-llama/llama-3.2-90b-vision-instruct"
         - "meta-llama/llama-3.2-11b-vision-instruct"
         - "qwen/qwen-2.5-72b-instruct"
         - "qwen/qwen-2.5-vl-72b-instruct"
@@ -264,34 +276,29 @@ endpoints:
         - "cognitivecomputations/dolphin-mixtral-8x22b"
         - "qwen/qwen-2-72b-instruct"
         - "mistralai/mistral-7b-instruct"
-        - "mistralai/mistral-7b-instruct-v0.3"
         - "nousresearch/hermes-2-pro-llama-3-8b"
+        - "mistralai/mistral-7b-instruct-v0.3"
         - "microsoft/phi-3-mini-128k-instruct"
         - "microsoft/phi-3-medium-128k-instruct"
+        - "deepseek/deepseek-coder"
         - "google/gemini-flash-1.5"
         - "meta-llama/llama-guard-2-8b"
+        - "allenai/olmo-7b-instruct"
         - "neversleep/llama-3-lumimaid-8b:extended"
         - "neversleep/llama-3-lumimaid-8b"
         - "meta-llama/llama-3-8b-instruct"
         - "meta-llama/llama-3-70b-instruct"
-        - "mistralai/mixtral-8x22b-instruct"
         - "microsoft/wizardlm-2-8x22b"
-        - "microsoft/wizardlm-2-7b"
         - "sophosympatheia/midnight-rose-70b"
         - "nousresearch/nous-hermes-2-mixtral-8x7b-dpo"
         - "mistralai/mistral-small"
         - "mistralai/mistral-tiny"
         - "mistralai/mistral-7b-instruct-v0.2"
-        - "cognitivecomputations/dolphin-mixtral-8x7b"
         - "mistralai/mixtral-8x7b-instruct"
-        - "openchat/openchat-7b"
-        - "undi95/toppy-m-7b"
         - "jondurbin/airoboros-l2-70b"
         - "mistralai/mistral-7b-instruct-v0.1"
-        - "nousresearch/nous-hermes-llama2-13b"
         - "gryphe/mythomax-l2-13b"
-        - "meta-llama/llama-2-13b-chat"
-        - "meta-llama/llama-2-70b-chat"
+        - "meta-llama/llama-2-70b-chat"        
         fetch: false
       titleConvo: true      
       summarize: false
@@ -349,3 +356,51 @@ fileConfig:
       - "text/x-csv"
   serverFileSizeLimit: 100  # Global server file size limit in MB
   avatarSizeLimit: 2  # Limit for user avatar image size in MB
+
+modelSpecs:
+  prioritize: true
+  list:    
+    - name: "openai/gpt-4o-mini"
+      label: "ChatGPT 4o Mini"
+      default: true
+      description: "Excelente para maioria das tarefas"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/openai.svg"
+      preset:
+        endpoint: "ChatGPT"
+        modelLabel: "GPT-4o Mini"
+        greeting: "Este o modelo é excelente para maioria das tarefas"
+        append_current_datetime: true
+
+    - name: "google/gemini-2.5-flash-preview"
+      label: "Gemini 2.5 Flash"
+      default: false
+      description: "O modelo mais popular do Google"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/gemini.svg"
+      preset:
+        endpoint: "Gemini"
+        modelLabel: "Gemini 2.5 Flash"
+        greeting: "O modelo mais popular do Google"
+        append_current_datetime: true
+
+    - name: "deepseek/deepseek-chat"
+      label: "Deepseek"
+      default: false
+      description: "Abalou o mercado de IA"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg"
+      preset:
+        endpoint: "Deepseek"
+        modelLabel: "Deepseek"
+        greeting: "Este é o modelo mais rápido e leve do Deepseek"
+        append_current_datetime: true    
+
+
+    - name: "meta-llama/llama-4-scout"
+      label: "Meta Llama 4 Scout"
+      default: false
+      description: "Ideal para documentos"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg"
+      preset:
+        endpoint: "Mais modelos"
+        modelLabel: "Meta"
+        greeting: "Ideal para análise de documentos extensos e complexos"
+        append_current_datetime: true    
