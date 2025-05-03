@@ -306,6 +306,8 @@ endpoints:
       forcePrompt: false      
       titleModel: 'google/gemini-2.0-flash-001'
       dropParams: ['stop']            
+      addParams:    
+        max_tokens: 20480
 
 fileConfig:
   endpoints:    
@@ -404,3 +406,5 @@ modelSpecs:
         modelLabel: "Meta"
         greeting: "Ideal para análise de documentos extensos e complexos"
         append_current_datetime: true    
+
+    
