@@ -395,7 +395,6 @@ modelSpecs:
         greeting: "Este é o modelo mais rápido e leve do Deepseek"
         append_current_datetime: true    
 
-
     - name: "meta-llama/llama-4-scout"
       label: "Meta Llama 4 Scout"
       default: false
