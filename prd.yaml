@@ -407,15 +407,4 @@ modelSpecs:
         greeting: "Ideal para análise de documentos extensos e complexos"
         append_current_datetime: true    
 
-    - name: "qwen/qwen3-8b"
-      label: "Meta Llama 4 Scout"
-      default: false
-      description: "Ideal para documentos"
-      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/meta-color.svg"
-      preset:
-        endpoint: "Mais modelos"
-        modelLabel: "Meta"
-        greeting: "Ideal para análise de documentos extensos e complexos"
-        append_current_datetime: true    
-
     
