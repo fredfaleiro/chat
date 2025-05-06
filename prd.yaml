@@ -400,7 +400,7 @@ modelSpecs:
       label: "Meta Llama 4 Scout"
       default: false
       description: "Ideal para documentos"
-      iconURL: "https://app.unpkg.com/@lobehub/icons-static-svg@1.46.0/files/icons/meta-color.svg"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/meta-color.svg"
       preset:
         endpoint: "Mais modelos"
         modelLabel: "Meta"
