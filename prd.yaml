@@ -15,7 +15,7 @@ interface:
     openNewTab: true
     modalAcceptance: true
     modalTitle: "Termos e Condições"
-    modalContent: "Termos e Condições"
+    modalContent: "Ao utilizar o Sia Chat você afirmar ter lido e concordar com os termos e condições disponíveis em https://sia.chat/tos e com a política de privacidade disponível em https://sia.chat/privacy." 
 
 
   endpointsMenu: true
@@ -400,7 +400,7 @@ modelSpecs:
       label: "Meta Llama 4 Scout"
       default: false
       description: "Ideal para documentos"
-      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg"
+      iconURL: "https://app.unpkg.com/@lobehub/icons-static-svg@1.46.0/files/icons/meta-color.svg"
       preset:
         endpoint: "Mais modelos"
         modelLabel: "Meta"
