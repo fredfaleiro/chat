@@ -406,5 +406,3 @@ modelSpecs:
         modelLabel: "Meta"
         greeting: "Ideal para análise de documentos extensos e complexos"
         append_current_datetime: true    
-
-    
