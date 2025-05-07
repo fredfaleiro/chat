@@ -1,0 +1,410 @@
+version: 1.2.4
+
+cache: true
+
+interface:
+  customWelcome: "Olá {{user.name}}"
+  # Privacy policy settings
+  privacyPolicy:
+    externalUrl: 'https://sia.chat/privacy'
+    openNewTab: true
+
+  # Terms of service
+  termsOfService:
+    externalUrl: 'https://sia.chat/tos'
+    openNewTab: true
+    modalAcceptance: true
+    modalTitle: "Termos e Condições"
+    modalContent: "Ao utilizar o Sia Chat você afirmar ter lido e concordar com os termos e condições disponíveis em https://sia.chat/tos e com a política de privacidade disponível em https://sia.chat/privacy." 
+
+
+  endpointsMenu: true
+  modelSelect: true
+  parameters: false
+  sidePanel: true
+  presets: false
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  agents: false
+  runCode: false
+
+balance:
+  enabled: false
+  startBalance: 20000
+  autoRefillEnabled: false
+  refillIntervalValue: 10
+  refillIntervalUnit: 'minutes'
+  refillAmount: 50000
+
+speech:
+  tts:
+    openai:      
+      apiKey: '${TTS_API_KEY}'
+      model: 'gpt-4o-mini-tts'
+      voices: ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer']
+
+
+  stt:
+    openai:      
+      apiKey: '${STT_API_KEY}'
+      model: 'whisper-1'
+
+rateLimits:
+  fileUploads:
+    ipMax: 50
+    ipWindowInMinutes: 60
+    userMax: 50
+    userWindowInMinutes: 60
+  conversationsImport:
+    ipMax: 50
+    ipWindowInMinutes: 60
+    userMax: 50
+    userWindowInMinutes: 60
+  stt:
+    ipMax: 50
+    ipWindowInMinutes: 1
+    userMax: 50
+    userWindowInMinutes: 1
+  tts:
+    ipMax: 50
+    ipWindowInMinutes: 1
+    userMax: 50
+    userWindowInMinutes: 1
+
+endpoints: 
+  custom:    
+    - name: "ChatGPT"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+      models:
+        default: 
+          - "openai/gpt-4o-mini-search-preview"
+          - "openai/gpt-4o-mini"
+          - "openai/gpt-4o"
+          - "openai/o1-mini"	
+          - "openai/o3-mini"
+          - "openai/o4-mini"
+          - "openai/gpt-4.1-mini"
+        fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop']    
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
+
+    - name: "Deepseek"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+      models:
+       default: 
+        - "deepseek/deepseek-chat"
+        - "deepseek/deepseek-r1"
+       fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop'] 
+
+    - name: "Gemini"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        x-portkey-debug: "false"
+      models:
+       default: 
+        - "google/gemini-2.5-flash-preview"
+        - "google/gemini-2.5-flash-preview:thinking"
+        - "google/gemini-pro-1.5"
+        - "google/gemma-3-27b-it"
+       fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop'] 
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/gemini-color.svg
+
+
+    - name: "Anthropic"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        x-portkey-debug: "false"
+      models:
+        default: 
+         - "anthropic/claude-3.5-haiku"
+         - "anthropic/claude-3.5-sonnet"	
+         - "anthropic/claude-3.7-sonnet"
+         - "anthropic/claude-3.7-sonnet:thinking"
+        fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop'] 
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/anthropic.svg
+
+    - name: "Mais modelos"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-virtual-key: "openrouter-d3ccde"        
+        x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+      models:
+        default: 
+        - "microsoft/phi-4-reasoning-plus"
+        - "inception/mercury-coder-small-beta"
+        - "meta-llama/llama-guard-4-12b"
+        - "qwen/qwen3-30b-a3b"
+        - "qwen/qwen3-8b"
+        - "qwen/qwen3-14b"
+        - "qwen/qwen3-32b"
+        - "qwen/qwen3-235b-a22b"
+        - "thudm/glm-z1-rumination-32b"
+        - "thudm/glm-z1-32b"
+        - "thudm/glm-4-32b"
+        - "google/gemini-2.5-flash-preview"
+        - "qwen/qwen2.5-coder-7b-instruct"
+        - "openai/gpt-4.1-nano"
+        - "x-ai/grok-3-mini-beta"
+        - "nvidia/llama-3.3-nemotron-super-49b-v1"
+        - "meta-llama/llama-4-maverick"
+        - "meta-llama/llama-4-scout"
+        - "mistral/ministral-8b"
+        - "scb10x/llama3.1-typhoon2-8b-instruct"
+        - "scb10x/llama3.1-typhoon2-70b-instruct"
+        - "qwen/qwen2.5-vl-32b-instruct"
+        - "mistralai/mistral-small-3.1-24b-instruct"
+        - "steelskull/l3.3-electra-r1-70b"
+        - "google/gemma-3-4b-it"
+        - "ai21/jamba-1.6-mini"
+        - "google/gemma-3-12b-it"
+        - "openai/gpt-4o-mini-search-preview"
+        - "google/gemma-3-27b-it"
+        - "thedrummer/anubis-pro-105b-v1"
+        - "latitudegames/wayfarer-large-70b-llama-3.3"
+        - "thedrummer/skyfall-36b-v2"
+        - "microsoft/phi-4-multimodal-instruct"
+        - "qwen/qwq-32b"
+        - "google/gemini-2.0-flash-lite-001"
+        - "mistralai/mistral-saba"
+        - "meta-llama/llama-guard-3-8b"
+        - "deepseek/deepseek-r1-distill-llama-8b"
+        - "google/gemini-2.0-flash-001"
+        - "qwen/qwen-vl-plus"
+        - "aion-labs/aion-rp-llama-3.1-8b"
+        - "qwen/qwen-turbo"
+        - "qwen/qwen2.5-vl-72b-instruct"
+        - "deepseek/deepseek-r1-distill-qwen-1.5b"
+        - "mistralai/mistral-small-24b-instruct-2501"
+        - "deepseek/deepseek-r1-distill-qwen-32b"
+        - "deepseek/deepseek-r1-distill-qwen-14b"
+        - "perplexity/sonar"
+        - "liquid/lfm-7b"
+        - "liquid/lfm-3b"
+        - "deepseek/deepseek-r1-distill-llama-70b"
+        - "mistralai/codestral-2501"
+        - "microsoft/phi-4"
+        - "deepseek/deepseek-chat"
+        - "sao10k/l3.3-euryale-70b"
+        - "cohere/command-r7b-12-2024"
+        - "meta-llama/llama-3.3-70b-instruct"
+        - "amazon/nova-lite-v1"
+        - "amazon/nova-micro-v1"
+        - "qwen/qwq-32b-preview"
+        - "qwen/qwen-2.5-coder-32b-instruct"
+        - "thedrummer/unslopnemo-12b"
+        - "mistralai/ministral-8b"
+        - "mistralai/ministral-3b"
+        - "qwen/qwen-2.5-7b-instruct"
+        - "nvidia/llama-3.1-nemotron-70b-instruct"
+        - "google/gemini-flash-1.5-8b"
+        - "thedrummer/rocinante-12b"
+        - "liquid/lfm-40b"
+        - "meta-llama/llama-3.2-3b-instruct"
+        - "meta-llama/llama-3.2-1b-instruct"
+        - "meta-llama/llama-3.2-11b-vision-instruct"
+        - "qwen/qwen-2.5-72b-instruct"
+        - "qwen/qwen-2.5-vl-72b-instruct"
+        - "neversleep/llama-3.1-lumimaid-8b"
+        - "mistralai/pixtral-12b"
+        - "cohere/command-r-08-2024"
+        - "qwen/qwen-2.5-vl-7b-instruct"
+        - "sao10k/l3.1-euryale-70b"
+        - "ai21/jamba-1-5-mini"
+        - "microsoft/phi-3.5-mini-128k-instruct"
+        - "nousresearch/hermes-3-llama-3.1-70b"
+        - "nousresearch/hermes-3-llama-3.1-405b"
+        - "sao10k/l3-lunaris-8b"
+        - "perplexity/llama-3.1-sonar-small-128k-online"
+        - "perplexity/llama-3.1-sonar-large-128k-online"
+        - "meta-llama/llama-3.1-8b-instruct"
+        - "meta-llama/llama-3.1-405b-instruct"
+        - "meta-llama/llama-3.1-70b-instruct"
+        - "mistralai/codestral-mamba"
+        - "mistralai/mistral-nemo"
+        - "openai/gpt-4o-mini"
+        - "openai/gpt-4o-mini-2024-07-18"
+        - "google/gemma-2-27b-it"
+        - "google/gemma-2-9b-it"
+        - "ai21/jamba-instruct"
+        - "cognitivecomputations/dolphin-mixtral-8x22b"
+        - "qwen/qwen-2-72b-instruct"
+        - "mistralai/mistral-7b-instruct"
+        - "nousresearch/hermes-2-pro-llama-3-8b"
+        - "mistralai/mistral-7b-instruct-v0.3"
+        - "microsoft/phi-3-mini-128k-instruct"
+        - "microsoft/phi-3-medium-128k-instruct"
+        - "deepseek/deepseek-coder"
+        - "google/gemini-flash-1.5"
+        - "meta-llama/llama-guard-2-8b"
+        - "allenai/olmo-7b-instruct"
+        - "neversleep/llama-3-lumimaid-8b:extended"
+        - "neversleep/llama-3-lumimaid-8b"
+        - "meta-llama/llama-3-8b-instruct"
+        - "meta-llama/llama-3-70b-instruct"
+        - "microsoft/wizardlm-2-8x22b"
+        - "sophosympatheia/midnight-rose-70b"
+        - "nousresearch/nous-hermes-2-mixtral-8x7b-dpo"
+        - "mistralai/mistral-small"
+        - "mistralai/mistral-tiny"
+        - "mistralai/mistral-7b-instruct-v0.2"
+        - "mistralai/mixtral-8x7b-instruct"
+        - "jondurbin/airoboros-l2-70b"
+        - "mistralai/mistral-7b-instruct-v0.1"
+        - "gryphe/mythomax-l2-13b"
+        - "meta-llama/llama-2-70b-chat"        
+        fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop']            
+      addParams:    
+        max_tokens: 20480
+
+fileConfig:
+  endpoints:    
+    default:
+      fileLimit: 4
+      fileSizeLimit: 10  
+      totalSizeLimit: 50 
+      supportedMimeTypes:    
+      - "text/x-c"
+      - "text/x-c\\+\\+"      
+      - "text/html"
+      - "text/x-java"      
+      - "text/markdown"
+      - "application/pdf"
+      - "text/x-php"      
+      - "text/javascript"
+      - "text/x-python"
+      - "text/x-script.python"
+      - "text/x-ruby"
+      - "text/x-tex"
+      - "text/plain"
+      - "text/css"      
+      - "text/vtt"
+      - "image/jpeg"      
+      - "image/gif"
+      - "image/png"
+      - "image/svg"
+      - "image/svg+xml"
+      - "application/csv"
+      - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      - "application/json"
+      - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      - "application/typescript"
+      - "application/xml"      
+      - "application/vnd.ms-excel"
+      - "application/msexcel"
+      - "application/x-msexcel"
+      - "application/x-ms-excel"
+      - "application/x-excel"
+      - "application/x-dos_ms_excel"
+      - "application/xls"
+      - "application/x-xls"
+      - "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      - "text/csv"
+      - "text/comma-separated-values"
+      - "text/x-comma-separated-values"
+      - "text/tab-separated-values"
+      - "text/x-csv"
+  serverFileSizeLimit: 100  # Global server file size limit in MB
+  avatarSizeLimit: 2  # Limit for user avatar image size in MB
+
+modelSpecs:
+  prioritize: true
+  list:    
+    - name: "openai/gpt-4o-mini"
+      label: "ChatGPT 4o Mini"
+      default: true
+      description: "Excelente para maioria das tarefas"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/openai.svg"
+      preset:
+        endpoint: "ChatGPT"
+        modelLabel: "GPT-4o Mini"
+        greeting: "Este o modelo é excelente para maioria das tarefas"
+        append_current_datetime: true
+
+    - name: "google/gemini-2.5-flash-preview"
+      label: "Gemini 2.5 Flash"
+      default: false
+      description: "O modelo mais popular do Google"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/gemini.svg"
+      preset:
+        endpoint: "Gemini"
+        modelLabel: "Gemini 2.5 Flash"
+        greeting: "O modelo mais popular do Google"
+        append_current_datetime: true
+
+    - name: "deepseek/deepseek-chat"
+      label: "Deepseek"
+      default: false
+      description: "Abalou o mercado de IA"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg"
+      preset:
+        endpoint: "Deepseek"
+        modelLabel: "Deepseek"
+        greeting: "Este é o modelo mais rápido e leve do Deepseek"
+        append_current_datetime: true    
+
+
+    - name: "meta-llama/llama-4-scout"
+      label: "Meta Llama 4 Scout"
+      default: false
+      description: "Ideal para documentos"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/meta-color.svg"
+      preset:
+        endpoint: "Mais modelos"
+        modelLabel: "Meta"
+        greeting: "Ideal para análise de documentos extensos e complexos"
+        append_current_datetime: true    
+
+    
