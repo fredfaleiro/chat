@@ -1,9 +1,9 @@
 version: 1.2.4
 
-cache: true
+cache: false
 
 interface:
-  customWelcome: "Olá {{user.name}}"
+  customWelcome: "Estamos no staging {{user.name}}"
   # Privacy policy settings
   privacyPolicy:
     externalUrl: 'https://sia.chat/privacy'
@@ -309,6 +309,25 @@ endpoints:
       addParams:    
         max_tokens: 20480
 
+    - name: "Portkey"
+      apikey: "dummy"
+      baseURL: ${PORTKEY_GATEWAY_URL}
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-config: "pc-sia-de-b68369"
+        x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+      models:
+        default: ["llama-3.2"]
+        fetch: true
+      titleConvo: true
+      titleModel: "current_model"
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false
+      modelDisplayLabel: "Portkey:Llama"
+      iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
+
 fileConfig:
   endpoints:    
     default:
@@ -394,17 +413,3 @@ modelSpecs:
         modelLabel: "Deepseek"
         greeting: "Este é o modelo mais rápido e leve do Deepseek"
         append_current_datetime: true    
-
-
-    - name: "meta-llama/llama-4-scout"
-      label: "Meta Llama 4 Scout"
-      default: false
-      description: "Ideal para documentos"
-      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/meta-color.svg"
-      preset:
-        endpoint: "Mais modelos"
-        modelLabel: "Meta"
-        greeting: "Ideal para análise de documentos extensos e complexos"
-        append_current_datetime: true    
-
-    
