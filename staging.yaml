@@ -20,13 +20,13 @@ interface:
 
   endpointsMenu: true
   modelSelect: true
-  parameters: false
+  parameters: true
   sidePanel: true
-  presets: false
+  presets: true
   prompts: true
   bookmarks: true
   multiConvo: true
-  agents: false
+  agents: true
   runCode: false
 
 balance:
@@ -508,6 +508,8 @@ fileConfig:
       - "text/x-csv"
   serverFileSizeLimit: 100  # Global server file size limit in MB
   avatarSizeLimit: 2  # Limit for user avatar image size in MB
+  openAI:
+    disabled: false  # Disables file uploading to the OpenAI endpoint
 
 modelSpecs:
   prioritize: true
