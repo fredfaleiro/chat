@@ -20,13 +20,13 @@ interface:
 
   endpointsMenu: true
   modelSelect: true
-  parameters: true
+  parameters: false
   sidePanel: true
-  presets: true
+  presets: false
   prompts: true
   bookmarks: true
   multiConvo: true
-  agents: true
+  agents: false
   runCode: false
 
 balance:
@@ -459,6 +459,23 @@ endpoints:
       addParams:    
         max_tokens: 20480    
 
+    - name: "Portkey"
+      apikey: "dummy"
+      baseURL: ${PORTKEY_GATEWAY_URL}
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-config: "pc-sia-de-b68369"
+      models:
+        default: ["llama-3.2"]
+        fetch: true
+      titleConvo: true
+      titleModel: "current_model"
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false
+      modelDisplayLabel: "Portkey:Llama"
+      iconURL: https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/rjqy7ghvjoiu4cd1xjbf
+
 fileConfig:
   endpoints:    
     default:
@@ -508,8 +525,6 @@ fileConfig:
       - "text/x-csv"
   serverFileSizeLimit: 100  # Global server file size limit in MB
   avatarSizeLimit: 2  # Limit for user avatar image size in MB
-  openAI:
-    disabled: false  # Disables file uploading to the OpenAI endpoint
 
 modelSpecs:
   prioritize: true
