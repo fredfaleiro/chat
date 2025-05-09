@@ -79,7 +79,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-config: "pc-sia-pr-620efe"
         x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
@@ -105,7 +105,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-config: "pc-sia-pr-620efe"
         x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
@@ -125,7 +125,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-config: "pc-sia-pr-620efe"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
         x-portkey-debug: "false"
       models:
@@ -149,15 +149,13 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-config: "pc-sia-pr-620efe"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
         x-portkey-debug: "false"
       models:
         default: 
          - "anthropic/claude-3.5-haiku"
-         - "anthropic/claude-3.5-sonnet"	
-         - "anthropic/claude-3.7-sonnet"
-         - "anthropic/claude-3.7-sonnet:thinking"
+         - "anthropic/claude-3.5-sonnet"	         
         fetch: false
       titleConvo: true      
       summarize: false
@@ -172,7 +170,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"        
+        x-portkey-config: "pc-sia-pr-620efe"        
         x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
