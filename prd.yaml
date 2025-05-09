@@ -156,6 +156,8 @@ endpoints:
         default: 
          - "anthropic/claude-3.5-haiku"
          - "anthropic/claude-3.5-sonnet"	
+         - "anthropic/claude-3.7-sonnet"
+         - "anthropic/claude-3.7-sonnet:thinking"
         fetch: false
       titleConvo: true      
       summarize: false
