@@ -1,6 +1,6 @@
 version: 1.2.4
 
-cache: true
+cache: false
 
 interface:
   customWelcome: "Olá {{user.name}}"
@@ -105,7 +105,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-config: "pc-sia-de-b68369"
         x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
@@ -125,7 +125,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-config: "pc-sia-de-b68369"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
         x-portkey-debug: "false"
       models:
@@ -149,7 +149,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"
+        x-portkey-config: "pc-sia-de-b68369"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
         x-portkey-debug: "false"
       models:
@@ -170,7 +170,7 @@ endpoints:
       baseURL: "${PORTKEY_GATEWAY_URL}"
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-virtual-key: "openrouter-d3ccde"        
+        x-portkey-config: "pc-sia-de-b68369"        
         x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
