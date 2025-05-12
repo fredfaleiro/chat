@@ -73,6 +73,19 @@ rateLimits:
     userWindowInMinutes: 1
 
 endpoints: 
+  agents:
+    recursionLimit: 50
+    maxRecursionLimit: 100
+    disableBuilder: false
+    allowedProviders:
+      - openAI
+    capabilities:
+      - "file_search"
+      - "actions"
+      - "tools"
+      - "artifacts"
+      - "ocr"
+      - "chain" 
   custom:    
     - name: "ChatGPT"
       apiKey: "dummy"
