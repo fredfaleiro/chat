@@ -84,8 +84,8 @@ endpoints:
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
-          - "openai/gpt-4o-mini-search-preview"
           - "openai/gpt-4o-mini"
+          - "openai/gpt-4o-mini-search-preview"
           - "openai/gpt-4o"
           - "openai/o1-mini"	
           - "openai/o3-mini"
