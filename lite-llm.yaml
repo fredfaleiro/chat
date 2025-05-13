@@ -1,0 +1,192 @@
+version: 1.2.4
+
+cache: true
+
+interface:
+  customWelcome: "Olá {{user.name}}"
+  # Privacy policy settings
+  privacyPolicy:
+    externalUrl: 'https://sia.chat/privacy'
+    openNewTab: true
+
+  # Terms of service
+  termsOfService:
+    externalUrl: 'https://sia.chat/tos'
+    openNewTab: true
+    modalAcceptance: true
+    modalTitle: "Termos e Condições"
+    modalContent: "Ao utilizar o Sia Chat você afirmar ter lido e concordar com os termos e condições disponíveis em https://sia.chat/tos e com a política de privacidade disponível em https://sia.chat/privacy." 
+
+
+  endpointsMenu: true
+  modelSelect: true
+  parameters: false
+  sidePanel: true
+  presets: false
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  agents: true
+  runCode: false
+
+balance:
+  enabled: false
+  startBalance: 20000
+  autoRefillEnabled: false
+  refillIntervalValue: 10
+  refillIntervalUnit: 'minutes'
+  refillAmount: 50000
+
+speech:
+  tts:
+    openai:      
+      apiKey: '${TTS_API_KEY}'
+      model: 'gpt-4o-mini-tts'
+      voices: ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer']
+
+
+  stt:
+    openai:      
+      apiKey: '${STT_API_KEY}'
+      model: 'whisper-1'
+
+rateLimits:
+  fileUploads:
+    ipMax: 50
+    ipWindowInMinutes: 60
+    userMax: 50
+    userWindowInMinutes: 60
+  conversationsImport:
+    ipMax: 50
+    ipWindowInMinutes: 60
+    userMax: 50
+    userWindowInMinutes: 60
+  stt:
+    ipMax: 50
+    ipWindowInMinutes: 1
+    userMax: 50
+    userWindowInMinutes: 1
+  tts:
+    ipMax: 50
+    ipWindowInMinutes: 1
+    userMax: 50
+    userWindowInMinutes: 1
+
+endpoints: 
+  agents:
+    recursionLimit: 50
+    maxRecursionLimit: 100
+    disableBuilder: false
+    allowedProviders:
+      - openAI
+    capabilities:
+      - "file_search"
+      - "actions"
+      - "tools"
+      - "artifacts"
+      - "ocr"
+      - "chain" 
+  custom:    
+    - name: "Lite LLM"
+      apiKey: "${LITELLM_API_KEY}"
+      baseURL: "${LITELLM_BASE_URL}"
+      models:
+        default: 
+          - "DeepSeek Chat"
+          - "openrouter/deepseek/deepseek-r1"
+        fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.0-flash-001'
+      dropParams: ['stop']    
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
+
+   
+
+fileConfig:
+  endpoints:    
+    default:
+      fileLimit: 4
+      fileSizeLimit: 10  
+      totalSizeLimit: 50 
+      supportedMimeTypes:    
+      - "text/x-c"
+      - "text/x-c\\+\\+"      
+      - "text/html"
+      - "text/x-java"      
+      - "text/markdown"
+      - "application/pdf"
+      - "text/x-php"      
+      - "text/javascript"
+      - "text/x-python"
+      - "text/x-script.python"
+      - "text/x-ruby"
+      - "text/x-tex"
+      - "text/plain"
+      - "text/css"      
+      - "text/vtt"
+      - "image/jpeg"      
+      - "image/gif"
+      - "image/png"
+      - "image/svg"
+      - "image/svg+xml"
+      - "application/csv"
+      - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      - "application/json"
+      - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      - "application/typescript"
+      - "application/xml"      
+      - "application/vnd.ms-excel"
+      - "application/msexcel"
+      - "application/x-msexcel"
+      - "application/x-ms-excel"
+      - "application/x-excel"
+      - "application/x-dos_ms_excel"
+      - "application/xls"
+      - "application/x-xls"
+      - "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      - "text/csv"
+      - "text/comma-separated-values"
+      - "text/x-comma-separated-values"
+      - "text/tab-separated-values"
+      - "text/x-csv"
+  serverFileSizeLimit: 100  # Global server file size limit in MB
+  avatarSizeLimit: 2  # Limit for user avatar image size in MB
+
+modelSpecs:
+  prioritize: true
+  list:    
+    - name: "openai/gpt-4o-mini"
+      label: "ChatGPT 4o Mini"
+      default: true
+      description: "Excelente para maioria das tarefas"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/openai.svg"
+      preset:
+        endpoint: "ChatGPT"
+        modelLabel: "GPT-4o Mini"
+        greeting: "Este o modelo é excelente para maioria das tarefas"
+        append_current_datetime: true
+
+    - name: "google/gemini-2.5-flash-preview"
+      label: "Gemini 2.5 Flash"
+      default: false
+      description: "O modelo mais popular do Google"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/gemini.svg"
+      preset:
+        endpoint: "Gemini"
+        modelLabel: "Gemini 2.5 Flash"
+        greeting: "O modelo mais popular do Google"
+        append_current_datetime: true
+
+    - name: "deepseek/deepseek-chat"
+      label: "Deepseek"
+      default: false
+      description: "Abalou o mercado de IA"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg"
+      preset:
+        endpoint: "Deepseek"
+        modelLabel: "Deepseek"
+        greeting: "Este é o modelo mais rápido e leve do Deepseek"
+        append_current_datetime: true    
