@@ -87,14 +87,14 @@ endpoints:
       - "ocr"
       - "chain" 
   custom:    
-    - name: "DeepSeek"
+    - name: "Deepseek"
       apiKey: "${LITELLM_API_KEY}"
       baseURL: "${LITELLM_BASE_URL}"
       headers:
         extra_headers: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
-          - "DeepSeek Chat"
+          - "Deepseek Chat"
           - "Deepseek R1"
         fetch: false
       titleConvo: true      
@@ -188,7 +188,7 @@ modelSpecs:
         greeting: "Este o modelo é excelente para maioria das tarefas"
         append_current_datetime: true
 
-    - name: "DeepSeek Chat"
+    - name: "Deepseek Chat"
       label: "Deepseek"
       default: false
       description: "Abalou o mercado de IA"
