@@ -90,6 +90,8 @@ endpoints:
     - name: "DeepSeek"
       apiKey: "${LITELLM_API_KEY}"
       baseURL: "${LITELLM_BASE_URL}"
+      headers:
+        extra_headers: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
           - "DeepSeek Chat"
@@ -106,6 +108,8 @@ endpoints:
     - name: "OpenAI"
       apiKey: "${LITELLM_API_KEY}"
       baseURL: "${LITELLM_BASE_URL}"
+      headers:
+        extra_headers: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
           - "ChatGPT 4o-mini"
