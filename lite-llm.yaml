@@ -87,19 +87,34 @@ endpoints:
       - "ocr"
       - "chain" 
   custom:    
-    - name: "Lite LLM"
+    - name: "DeepSeek"
       apiKey: "${LITELLM_API_KEY}"
       baseURL: "${LITELLM_BASE_URL}"
       models:
         default: 
           - "DeepSeek Chat"
-          - "openrouter/deepseek/deepseek-r1"
+          - "Deepseek R1"
         fetch: false
       titleConvo: true      
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.0-flash-001'
+      titleModel: 'openrouter/google/gemini-2.0-flash-001'
+      dropParams: ['stop']    
+      iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg
+
+    - name: "OpenAI"
+      apiKey: "${LITELLM_API_KEY}"
+      baseURL: "${LITELLM_BASE_URL}"
+      models:
+        default: 
+          - "ChatGPT 4o-mini"
+        fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'openrouter/google/gemini-2.0-flash-001'
       dropParams: ['stop']    
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
 
@@ -164,23 +179,12 @@ modelSpecs:
       description: "Excelente para maioria das tarefas"
       iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/openai.svg"
       preset:
-        endpoint: "ChatGPT"
-        modelLabel: "GPT-4o Mini"
+        endpoint: "OpenAI"
+        modelLabel: "ChatGPT 4o-mini"
         greeting: "Este o modelo é excelente para maioria das tarefas"
         append_current_datetime: true
 
-    - name: "google/gemini-2.5-flash-preview"
-      label: "Gemini 2.5 Flash"
-      default: false
-      description: "O modelo mais popular do Google"
-      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/gemini.svg"
-      preset:
-        endpoint: "Gemini"
-        modelLabel: "Gemini 2.5 Flash"
-        greeting: "O modelo mais popular do Google"
-        append_current_datetime: true
-
-    - name: "deepseek/deepseek-chat"
+    - name: "DeepSeek Chat"
       label: "Deepseek"
       default: false
       description: "Abalou o mercado de IA"
