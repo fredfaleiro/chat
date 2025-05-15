@@ -96,7 +96,7 @@ endpoints:
         default: 
           - "Deepseek Chat"
           - "Deepseek R1"
-        fetch: true
+        fetch: false
       titleConvo: true      
       summarize: false
       summaryModel: "current_model"
@@ -113,7 +113,7 @@ endpoints:
       models:
         default: 
           - "ChatGPT 4o-mini"
-        fetch: true
+        fetch: false
       titleConvo: true      
       summarize: false
       summaryModel: "current_model"
@@ -121,6 +121,20 @@ endpoints:
       titleModel: 'openrouter/google/gemini-2.0-flash-001'
       dropParams: ['stop']    
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
+
+    - name: "Mais Modelos"
+      apiKey: "${LITELLM_API_KEY}"
+      baseURL: "${LITELLM_BASE_URL}"
+      models:
+        default: ["ChatGPT 4o-mini"]
+        fetch: true
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'openrouter/google/gemini-2.0-flash-001'
+      dropParams: ['stop']    
+
 
    
 
