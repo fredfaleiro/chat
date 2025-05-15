@@ -96,7 +96,7 @@ endpoints:
         default: 
           - "Deepseek Chat"
           - "Deepseek R1"
-        fetch: false
+        fetch: true
       titleConvo: true      
       summarize: false
       summaryModel: "current_model"
@@ -113,7 +113,7 @@ endpoints:
       models:
         default: 
           - "ChatGPT 4o-mini"
-        fetch: false
+        fetch: true
       titleConvo: true      
       summarize: false
       summaryModel: "current_model"
