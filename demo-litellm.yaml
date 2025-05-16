@@ -102,7 +102,6 @@ endpoints:
       summaryModel: "current_model"
       forcePrompt: false      
       titleModel: 'openrouter/google/gemini-2.0-flash-001'
-      dropParams: ['stop']    
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg
 
     - name: "OpenAI"
@@ -119,7 +118,6 @@ endpoints:
       summaryModel: "current_model"
       forcePrompt: false      
       titleModel: 'openrouter/google/gemini-2.0-flash-001'
-      dropParams: ['stop']    
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
 
     - name: "Mais Modelos"
@@ -133,7 +131,6 @@ endpoints:
       summaryModel: "current_model"
       forcePrompt: false      
       titleModel: 'openrouter/google/gemini-2.0-flash-001'
-      dropParams: ['stop']    
 
 
    
