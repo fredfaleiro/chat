@@ -93,7 +93,7 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-de-654560"
-        x-portkey-debug: "false"
+        x-portkey-debug: "true"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
@@ -119,7 +119,7 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-de-654560"
-        x-portkey-debug: "false"
+        x-portkey-debug: "true"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
        default: 
@@ -140,7 +140,7 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-de-654560"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
-        x-portkey-debug: "false"
+        x-portkey-debug: "true"
       models:
        default: 
         - "google/gemini-2.5-flash-preview"
@@ -164,7 +164,7 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-de-654560"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
-        x-portkey-debug: "false"
+        x-portkey-debug: "true"
       models:
         default: 
          - "anthropic/claude-3.5-haiku"
@@ -184,7 +184,7 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-de-654560"        
-        x-portkey-debug: "false"
+        x-portkey-debug: "true"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
