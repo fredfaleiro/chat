@@ -93,7 +93,6 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-pr-620efe"
-        x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
@@ -119,7 +118,6 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-pr-620efe"
-        x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
        default: 
@@ -140,7 +138,6 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-pr-620efe"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
-        x-portkey-debug: "false"
       models:
        default: 
         - "google/gemini-2.5-flash-preview"
@@ -164,7 +161,6 @@ endpoints:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-pr-620efe"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
-        x-portkey-debug: "false"
       models:
         default: 
          - "anthropic/claude-3.5-haiku"
@@ -184,7 +180,6 @@ endpoints:
       headers:
         x-portkey-api-key: "${PORTKEY_API_KEY}"
         x-portkey-config: "pc-sia-pr-620efe"        
-        x-portkey-debug: "false"
         x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
       models:
         default: 
