@@ -396,10 +396,21 @@ modelSpecs:
     - name: "deepseek/deepseek-chat"
       label: "Deepseek"
       default: false
-      description: "Abalou o mercado de IA"
+      description: "A famosa IA chinesa"
       iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/deepseek.svg"
       preset:
         endpoint: "Deepseek"
         modelLabel: "Deepseek"
         greeting: "Este é o modelo mais rápido e leve do Deepseek"
         append_current_datetime: true    
+    
+    - name: "perplexity/sonar"
+      label: "Perplexity sonar"
+      default: false
+      description: "Experimente em pesquisas"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/perplexity.svg"
+      preset:
+        endpoint: "Mais modelos"
+        modelLabel: "Perplexity"
+        greeting: "Perplexity Sonar foi projetado para ajudar com uma ampla gama de tarefas, desde pesquisa acadêmica até exploração de conhecimento geral"
+        append_current_datetime: true
