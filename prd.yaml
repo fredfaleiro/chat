@@ -143,8 +143,8 @@ endpoints:
         x-portkey-debug: "false"
       models:
        default: 
-        - "google/gemini-2.5-flash-preview"
-        - "google/gemini-2.5-flash-preview:thinking"
+        - "google/gemini-2.5-flash"
+        - "google/gemini-2.5-flash:thinking"
         - "google/gemini-pro-1.5"
         - "google/gemma-3-27b-it"
        fetch: false
@@ -193,7 +193,6 @@ endpoints:
         - "deepseek/deepseek-r1-0528-qwen3-8b"
         - "thedrummer/valkyrie-49b-v1"
         - "mistralai/devstral-small"
-        - "google/gemini-2.5-flash-preview-05-20"
         - "arcee-ai/caller-large"
         - "arcee-ai/spotlight"
         - "arcee-ai/coder-large"
@@ -210,7 +209,7 @@ endpoints:
         - "thudm/glm-z1-rumination-32b"
         - "thudm/glm-z1-32b"
         - "thudm/glm-4-32b"
-        - "google/gemini-2.5-flash-preview"
+        - "google/gemini-2.5-flash"
         - "openai/gpt-4.1-nano"
         - "x-ai/grok-3-mini-beta"
         - "nvidia/llama-3.3-nemotron-super-49b-v1"
@@ -382,7 +381,7 @@ modelSpecs:
         greeting: "Este o modelo é excelente para maioria das tarefas"
         append_current_datetime: true
 
-    - name: "google/gemini-2.5-flash-preview"
+    - name: "google/gemini-2.5-flash"
       label: "Gemini 2.5 Flash"
       default: false
       description: "O modelo mais popular do Google"
