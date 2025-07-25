@@ -131,7 +131,26 @@ endpoints:
       summaryModel: "current_model"
       forcePrompt: false      
       titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
-      dropParams: ['stop'] 
+      dropParams: ['stop']
+
+    - name: "Perplexity"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-config: "pc-sia-pr-620efe"
+        x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+      models:
+       default: 
+        - "perplexity/sonar"
+       fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      dropParams: ['stop']  
 
     - name: "Gemini"
       apiKey: "dummy"
@@ -403,4 +422,15 @@ modelSpecs:
         endpoint: "Deepseek"
         modelLabel: "Deepseek"
         greeting: "Este é o modelo mais rápido e leve do Deepseek"
+        append_current_datetime: true
+    
+    - name: "perplexity/sonar"
+      label: "Perplexity Sonar"
+      default: false
+      description: "Experimente em pesquisas"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/perplexity.svg"
+      preset:
+        endpoint: "Perplexity"
+        modelLabel: "Sonar"
+        greeting: "Perplexity Sonar foi projetado para ajudar com uma ampla gama de tarefas, desde pesquisa acadêmica até exploração de conhecimento geral"
         append_current_datetime: true    
