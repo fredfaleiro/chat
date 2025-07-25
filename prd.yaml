@@ -152,6 +152,26 @@ endpoints:
       titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
       dropParams: ['stop']  
 
+    - name: "Qwen"
+      apiKey: "dummy"
+      baseURL: "${PORTKEY_GATEWAY_URL}"
+      headers:
+        x-portkey-api-key: "${PORTKEY_API_KEY}"
+        x-portkey-config: "pc-sia-pr-620efe"
+        x-portkey-debug: "false"
+        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+      models:
+       default: 
+        - "qwen/qwen3-coder"
+        - "qwen/qwen3-4b:free"
+       fetch: false
+      titleConvo: true      
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false      
+      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      dropParams: ['stop'] 
+
     - name: "Gemini"
       apiKey: "dummy"
       baseURL: "${PORTKEY_GATEWAY_URL}"
@@ -165,8 +185,6 @@ endpoints:
         - "google/gemini-2.5-flash-lite-preview-06-17"
         - "google/gemini-2.5-flash"
         - "google/gemini-2.5-flash:thinking"
-        - "google/gemini-pro-1.5"
-        - "google/gemma-3-27b-it"
        fetch: false
       titleConvo: true      
       summarize: false
@@ -433,4 +451,15 @@ modelSpecs:
         endpoint: "Perplexity"
         modelLabel: "Sonar"
         greeting: "Perplexity Sonar foi projetado para ajudar com uma ampla gama de tarefas, desde pesquisa acadêmica até exploração de conhecimento geral"
-        append_current_datetime: true    
+        append_current_datetime: true 
+
+    - name: "qwen/qwen3-coder"
+      label: "Qwen: Qwen3 Coder"
+      default: false
+      description: "Um agente de programação capaz de realizar tarefas complexas"
+      iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/qwen.svg"
+      preset:
+        endpoint: "Qwen"
+        modelLabel: "qwen3-coder"
+        greeting: "Qwen: Qwen3 Coder é um agente de programação capaz de realizar tarefas complexas"
+        append_current_datetime: true  
