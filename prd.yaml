@@ -170,7 +170,8 @@ endpoints:
       summaryModel: "current_model"
       forcePrompt: false      
       titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
-      dropParams: ['stop'] 
+      dropParams: ['stop']
+      iconURL: 'https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/qwen-color.svg'
 
     - name: "Gemini"
       apiKey: "dummy"
