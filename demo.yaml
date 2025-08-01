@@ -114,13 +114,10 @@ endpoints:
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
 
     - name: "Deepseek"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-config: "pc-sia-de-654560"
-        x-portkey-debug: "false"
-        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"email": "{{USER_EMAIL}}"}'
       models:
        default: 
         - "deepseek/deepseek-chat"
@@ -130,8 +127,7 @@ endpoints:
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
-      dropParams: ['stop'] 
+      titleModel: 'google/gemini-2.5-flash-lite'
 
     - name: "Gemini"
       apiKey: "dummy"
