@@ -88,13 +88,10 @@ endpoints:
       - "chain" 
   custom:    
     - name: "ChatGPT"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-config: "pc-sia-pr-620efe"
-        x-portkey-debug: "false"
-        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
       models:
         default: 
           - "openai/gpt-4o-mini"
@@ -109,18 +106,15 @@ endpoints:
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      titleModel: 'google/gemini-2.5-flash-lite'
       dropParams: ['stop']    
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg
 
     - name: "Deepseek"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-config: "pc-sia-pr-620efe"
-        x-portkey-debug: "false"
-        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
       models:
        default: 
         - "deepseek/deepseek-chat"
@@ -130,17 +124,14 @@ endpoints:
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      titleModel: 'google/gemini-2.5-flash-lite'
       dropParams: ['stop']
 
     - name: "Perplexity"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-config: "pc-sia-pr-620efe"
-        x-portkey-debug: "false"
-        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
       models:
        default: 
         - "perplexity/sonar"
@@ -149,17 +140,14 @@ endpoints:
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      titleModel: 'google/gemini-2.5-flash-lite'
       dropParams: ['stop']  
 
     - name: "Qwen"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-config: "pc-sia-pr-620efe"
-        x-portkey-debug: "false"
-        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
       models:
        default: 
         - "qwen/qwen3-coder"
@@ -169,21 +157,18 @@ endpoints:
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      titleModel: 'google/gemini-2.5-flash-lite'
       dropParams: ['stop']
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.46.0/icons/qwen-color.svg
 
     - name: "Gemini"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-config: "pc-sia-pr-620efe"
-        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
-        x-portkey-debug: "false"
+        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
       models:
        default:
-        - "google/gemini-2.5-flash-lite-preview-06-17"
+        - "google/gemini-2.5-flash-lite"
         - "google/gemini-2.5-flash"
         - "google/gemini-2.5-flash:thinking"
        fetch: false
@@ -191,40 +176,15 @@ endpoints:
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      titleModel: 'google/gemini-2.5-flash-lite'
       dropParams: ['stop'] 
       iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/gemini-color.svg
 
-
-    # - name: "Anthropic"
-    #   apiKey: "dummy"
-    #   baseURL: "${PORTKEY_GATEWAY_URL}"
-    #   headers:
-    #     x-portkey-api-key: "${PORTKEY_API_KEY}"
-    #     x-portkey-config: "pc-sia-pr-620efe"
-    #     x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
-    #     x-portkey-debug: "false"
-    #   models:
-    #     default: 
-    #      - "anthropic/claude-3.5-haiku"
-    #      - "anthropic/claude-3.5-sonnet"	         
-    #     fetch: false
-    #   titleConvo: true      
-    #   summarize: false
-    #   summaryModel: "current_model"
-    #   forcePrompt: false      
-    #   titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
-    #   dropParams: ['stop'] 
-    #   iconURL: https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/anthropic.svg
-
     - name: "Mais modelos"
-      apiKey: "dummy"
-      baseURL: "${PORTKEY_GATEWAY_URL}"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        x-portkey-api-key: "${PORTKEY_API_KEY}"
-        x-portkey-config: "pc-sia-pr-620efe"        
-        x-portkey-debug: "false"
-        x-portkey-metadata: '{"_user": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
       models:
         default: 
         - "sentientagi/dobby-mini-unhinged-plus-llama-3.1-8b"
@@ -248,7 +208,7 @@ endpoints:
         - "thudm/glm-z1-rumination-32b"
         - "thudm/glm-z1-32b"
         - "thudm/glm-4-32b"
-        - "google/gemini-2.5-flash-lite-preview-06-17"
+        - "google/gemini-2.5-flash-lite"
         - "google/gemini-2.5-flash"
         - "openai/gpt-4.1-nano"
         - "x-ai/grok-3-mini-beta"
@@ -352,7 +312,7 @@ endpoints:
       summarize: false
       summaryModel: "current_model"
       forcePrompt: false      
-      titleModel: 'google/gemini-2.5-flash-lite-preview-06-17'
+      titleModel: 'google/gemini-2.5-flash-lite'
       dropParams: ['stop']            
       addParams:    
         max_tokens: 20480
@@ -421,7 +381,7 @@ modelSpecs:
         greeting: "Este o modelo é excelente para maioria das tarefas"
         append_current_datetime: true
 
-    - name: "google/gemini-2.5-flash-lite-preview-06-17"
+    - name: "google/gemini-2.5-flash-lite"
       label: "Gemini 2.5 Flash"
       default: false
       description: "O modelo mais popular do Google"
@@ -452,7 +412,7 @@ modelSpecs:
         endpoint: "Perplexity"
         modelLabel: "Perplexity"
         greeting: "Perplexity Sonar foi projetado para ajudar com uma ampla gama de tarefas, desde pesquisa acadêmica até exploração de conhecimento geral"
-        promptPrefix: "Additional Rules: 1. Always print the full URL in brackets after the Cititation Number instead of just the Citation Number; 2. Ensure responses are concise and relevant; 3. Always cite the sources of your web search; 4 - At the end of the content, place all the links used in the references in list format."
+        promptPrefix: "Additional Rules: 1. Always print the full URL instead of just the Citation Number; 2. Ensure responses are concise and relevant; 3. Always cite the sources of your web search; 4 - At the end of the content, place all the links used in the references in list format."
         append_current_datetime: true 
 
     - name: "qwen/qwen3-coder"
