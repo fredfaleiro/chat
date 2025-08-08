@@ -94,6 +94,8 @@ endpoints:
         cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
       models:
         default: 
+          - "openai/gpt-5-mini"
+          - "openai/gpt-5-nano"
           - "openai/gpt-4o-mini"
           - "openai/gpt-4o-mini-search-preview"
           - "openai/gpt-4o"
@@ -370,14 +372,14 @@ fileConfig:
 modelSpecs:
   prioritize: true
   list:    
-    - name: "openai/gpt-4o-mini"
-      label: "ChatGPT 4o Mini"
+    - name: "openai/gpt-5-mini"
+      label: "ChatGPT 5 Mini"
       default: true
-      description: "Excelente para maioria das tarefas"
+      description: "O modelo mais novo da OpenAI"
       iconURL: "https://unpkg.com/@lobehub/icons-static-svg@1.45.0/icons/openai.svg"
       preset:
         endpoint: "ChatGPT"
-        modelLabel: "GPT-4o Mini"
+        modelLabel: "ChatGPT 5 Mini"
         greeting: "Este o modelo é excelente para maioria das tarefas"
         append_current_datetime: true
 
