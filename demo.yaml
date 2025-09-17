@@ -91,7 +91,7 @@ endpoints:
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"user": "{{LIBRECHAT_USER_EMAIL}}"}'
       models:
         default:
           - "openai/gpt-5-mini"
@@ -116,7 +116,7 @@ endpoints:
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"user": "{{LIBRECHAT_USER_EMAIL}}"}'
       models:
        default: 
         - "deepseek/deepseek-chat"
@@ -132,7 +132,7 @@ endpoints:
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"user": "{{LIBRECHAT_USER_EMAIL}}"}'
       models:
        default: 
         - "google/gemini-2.5-flash-lite"
@@ -153,7 +153,7 @@ endpoints:
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_AI_ID}/${CLOUDFLARE_AI_GATEWAY}/openrouter"
       headers:
-        cf-aig-metadata: '{"email": "${USER_EMAIL}"}'
+        cf-aig-metadata: '{"user": "{{LIBRECHAT_USER_EMAIL}}"}'
       models:
         default: 
         - "sentientagi/dobby-mini-unhinged-plus-llama-3.1-8b"
